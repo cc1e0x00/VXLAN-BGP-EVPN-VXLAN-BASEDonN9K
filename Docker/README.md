@@ -1,6 +1,6 @@
 # Docker File
 
-Docker file created by mmyself based on nicolaka/netshoot to create many containers on server hosts for diferrent VRF/tenants in VXLAN BGP EVPN.
+Docker file created by myself based on nicolaka/netshoot to create many containers Alphine on server hosts for diferrent VRF/tenants in VXLAN BGP EVPN.
 
 List of tools available in this image
 

@@ -9,4 +9,28 @@ Addition to protocol and lab notes, like the first part of [VXLAN Flood & Learni
 
 # VXLAN-BGP-EVPN-BASEDonN9K
 
+## Essentials files and a structure way to organize the project
+
+
+```
+├── Docker
+│   ├── Dockerfile
+│   └── README.md
+├── README.md
+├── imagens
+│   └── BGP-EVPN-VXLAN-BASED_N9k.jpg
+├── knowlegment
+│   └── VXLAN BGP EVPN.md
+└── network-automation
+    └── ansible
+        ├── ansible.cfg
+        ├── inventory
+        │   ├── group_vars
+        │   ├── host_vars
+        │   └── prod.yml
+        ├── playbooks
+        └── roles
+```
+
+## Network Topology
 ![Digram](imagens/BGP-EVPN-VXLAN-BASED_N9k.jpg)
