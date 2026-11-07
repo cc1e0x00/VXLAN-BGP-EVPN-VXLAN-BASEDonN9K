@@ -64,3 +64,38 @@ _Note: In eBGP as underlay, RTs cannot be auto-generated. ASN may vary on differ
 || 3|Inclusive multicast ethernet tag route|
 || 4|Ethernet segment routed (Not supported by Cisco)|
 |Draft-ietf-bess-evpn-prefix-advertiment|5|IP prefix route| |
+
+### MP-BGP  EVPN Route type 2  MAC/IP Advertisement Route
+
+- Provides End-Host reachability information
+
+MAC, MAC address Length, Optionally IP address, IP address length (32bits or 12bits, IPv4 and IPv6 respectively).
+
+![RT2 adv route](../imagens/MP-BGP%20EVPN%20Route%20type%202%20-%20MACP%20Advertisement%20Route.png)
+
+Below an MP-BGP update while a new end-host MAC address is identified 
+
+![RT2 adv route](../imagens/MP-BGP%20EVPN%20Route%20type%202%20-%20MACP%20Advertisement%20mac%20only.png)
+
+Below Route-type 2 update MAC/IP
+
+![RT2 adv route mac/ip](../imagens/MP-BGP%20EVPN%20Route%20type%202%20-%20MACP%20Advertisement%20mac-ip.png)
+
+- Route type 2 MAC address only is represented with length /216;
+- While MAC/IP route type 2 is presented as a /272 prefix ( 34bits IPv4 + 24bits L3VNI)
+    - When MAC/IPv6 is represented as a /368 ( 128bits for IPv6 + 24 bits L3VNI)
+- Route type 5 EVPN:
+    - IPv4 is represented by a /224;
+    - IPv6 is represented by /416
+
+
+**Host Deletion**
+
+* ARP entry expires for a given host
+    * VTEP send out a ARP request if no ARP response is received, MAC/IP Route type 2 withdraw advertised
+* MAC address aging time expire
+    * VTEP send out MAC-only Route type 2 withdraw. MAC <-> VTEP Control plane still there until Mac aging time expire
+
+Is case os VM mobility, the new vtep advertises the MAC/IP route type 2 but using Mobility Sequence to tiebreake. Then the old VTEP’s entry is withdraw as well.
+
+![RT2 MACMOBILITY](../imagens/MP-BGP%20EVPN%20Route%20type%202%20-%20MACP%20Advertisement%20MAC%20MOBILITY.png)
