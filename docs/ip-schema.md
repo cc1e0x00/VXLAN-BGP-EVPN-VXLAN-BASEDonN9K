@@ -39,6 +39,8 @@ Used as the VXLAN tunnel source IP. Separating VTEP from router-id allows distri
 | Device | Loopback1 IP  || Anycast gateway IP   | 10.100.0.1/24        |
 
 |--------|---------------|
+| spine1-rio.dc | 10.0.0.111/32 |
+| spine2-rio.dc | 10.0.0.112/32 |
 | leaf1-rio.dc  | 10.0.0.113/32 |
 | leaf2-rio.dc  | 10.0.0.114/32 |
 | leaf3_vpc-rio.dc  | 10.0.0.115/32 10.0.0.120/32 |
