@@ -1,0 +1,15 @@
+! --- Physical Underlay Interfaces ---
+{% for intf in underlay_interfaces %}
+interface {{ intf.name }}
+  description {{ intf.description }}
+  no switchport
+  ip router isis underlay
+  no shutdown
+{% endfor %}
+
+! --- Loopback Interfaces ---
+{% for lb in loopback_interfaces %}
+interface Loopback{{ lb.id }}
+  description {{ lb.description }}
+  ip address {{ lb.ipv4 }}
+{% endfor %}

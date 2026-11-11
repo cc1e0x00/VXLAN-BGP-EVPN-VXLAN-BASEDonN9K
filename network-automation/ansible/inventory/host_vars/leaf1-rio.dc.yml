@@ -6,3 +6,8 @@ loopback_interfaces:
   - id: 1
     description: "VTEP-SOURCE-NVE"
     ipv4: "10.254.0.113/32"
+underlay_interfaces:
+  - name: "Ethernet1/5"
+    description: "LINK-TO-SPINE1"
+  - name: "Ethernet1/6"
+    description: "LINK-TO-SPINE2"
