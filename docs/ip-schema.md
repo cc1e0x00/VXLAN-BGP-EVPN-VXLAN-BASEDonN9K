@@ -119,12 +119,12 @@ Used for SSH, gNMI streaming, Ansible automation, and out-of-band access.
 |--------|-----------------|
 | spine1-rio.dc | 192.0.2.11  |
 | spine2-rio.dc | 192.0.2.12  |
-| leaf1-rio.dc  | 192.0.2.21  |
-| leaf2-rio.dc  | 192.0.2.22  |
-| leaf3_vpc-rio.dc  | 192.0.2.23  |
-| leaf4_vpc-rio.dc  | 192.0.2.24  |
-| borderleaf1-rio.dc  | 192.0.2.101  |
-| borderleaf2-rio.dc  | 192.0.2.102  |
+| leaf1-rio.dc  | 192.0.2.13  |
+| leaf2-rio.dc  | 192.0.2.14  |
+| leaf3_vpc-rio.dc  | 192.0.2.15  |
+| leaf4_vpc-rio.dc  | 192.0.2.16  |
+| borderleaf1-rio.dc  | 192.0.2.17  |
+| borderleaf2-rio.dc  | 192.0.2.18  |
 
 ## Route-target convention
 
