@@ -7,10 +7,15 @@ This project is part of notes I've been done to document my progress on Cisco's 
 
 Addition to protocol and lab notes, like the first part of [VXLAN Flood & Learning article](https://rafaesil.medium.com/dc-journey-day-6-vxlan-flood-and-learn-on-nx-os-be3b25c9c381?sharedUserId=rafaesil). I will share my VXLAN BGP EVPN deployment plus IaC using ansible that's automation tool I'm gooing deeper.
 
+# What it demonstrates
+
+- **Fabric architecture**  2-spine / 6-leaf Clos, iBGP-everywhere underlay, EVPN VXLAN overlay with Asymmetric IRB, anycast gateway, BFD sub-second convergence
+
+- **Infrastructure as code**  idempotent Ansible roles for base config, underlay, and overlay; inventory models the topology as data
+
 # VXLAN-BGP-EVPN-BASEDonN9K
 
 ## Essentials files and Automation proposal scheme
-
 
 ```
 .                                              
@@ -53,8 +58,17 @@ Addition to protocol and lab notes, like the first part of [VXLAN Flood & Learni
 ```
 
 ## Network Topology
+
+
+| Component       | Count | Role                                          |
+|-----------------|-------|-----------------------------------------------|
+| Spine switches  | 2     | N9K, transit-only, shared ASN 65000   |
+| Leaf switches   | 6     | N9K, VTEP,  shared ASN 65000  |
+| UCS Server      | 3     | Ubuntu containers, one per rail               |
+| Fabric links    | 8     | Full mesh between spine and leaf layers       |
+| Automation host | 1     | Ansible              |
+
 ![Digram](imagens/BGP-EVPN-VXLAN-BASED_N9k.jpg)
-![ISISUNDERLAT](./imagens/BGP-EVPN-VXLAN-BASED_N9k-ISIS.drawio.png)
 
 | VRF | L3 VNI | VLAN | VNI | Networks / IPs | Description / Interfaces |
 | :--- | :--- | :---: | :---: | :--- | :--- |
