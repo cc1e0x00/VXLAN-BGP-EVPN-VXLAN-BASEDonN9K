@@ -1,0 +1,7 @@
+loopback_interfaces:
+  - id: 0
+    description: "UNDERLAY-ROUTER-ID"
+    ipv4: "10.0.0.18/32"
+  - id: 1
+    description: "VTEP-SOURCE-NVE"
+    ipv4: "10.254.0.118/32"

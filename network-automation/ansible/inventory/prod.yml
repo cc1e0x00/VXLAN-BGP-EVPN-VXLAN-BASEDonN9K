@@ -1,0 +1,41 @@
+---
+all:
+  children:
+    datacenter:
+        children:
+          americas:
+            children:
+              rio:
+                children:
+                  fabric:
+                    children:
+                      spines:
+                        hosts:
+                          spine1-rio.dc:
+                            ansible_host: 192.0.2.11
+                            role: spine
+                          spine2-rio.dc:
+                            ansible_host: 192.0.2.12
+                            role: spine
+                      leaves:
+                        hosts:
+                          leaf1-rio.dc:
+                            ansible_host: 192.0.2.13
+                            role: leaf
+                          leaf2-rio.dc:
+                            ansible_host: 192.0.2.14
+                            role: leaf                         
+                          leaf3-rio.dc:
+                            ansible_host: 192.0.2.15
+                            role: leaf
+                          leaf4-rio.dc:
+                            ansible_host: 192.0.2.16
+                            role: leaf
+                      boardleaves:
+                        hosts:
+                          borderleaf1-rio.edc:
+                            ansible_host: 192.0.2.17
+                            role: borderleaf                         
+                          borderleaf2-rio.edc:
+                            ansible_host: 192.0.2.18
+                            role: borderleaf

@@ -24,7 +24,7 @@ Used origin of underlay routing announcements and physical uplink ip unnumered
 | spine1-rio.dc | 10.0.0.11/32 |
 | spine2-rio.dc | 10.0.0.12/32 |
 | leaf1-rio.dc  | 10.0.0.13/32 |
-| leaf2-rio.dc  | 10.0.0.14/32 |
+| leaf2-riogit.dc  | 10.0.0.14/32 |
 | leaf3_vpc-rio.dc  | 10.0.0.15/32  |
 | leaf4_vpc-rio.dc  | 10.0.0.16/32 |
 | borderleaf1-rio.dc  | 10.0.0.17/32 |
@@ -34,9 +34,22 @@ Used origin of underlay routing announcements and physical uplink ip unnumered
 
 ### Loopback1 — VTEP source (leaves only)
 
-Used as the VXLAN tunnel source IP. Separating VTEP from router-id allows distributed-VTEP designs without disrupting BGP.ai-training
+Used as the VXLAN tunnel source IP. Separating VTEP from router-id allows distributed-VTEP designs without disrupting BGP.
 
-| Device | Loopback1 IP  || Anycast gateway IP   | 10.100.0.1/24        |
+
+| Device | Loopback1 IP |
+| :--- | :--- |
+| spine1-rio.dc | 10.0.0.111/32 |
+| spine2-rio.dc | 10.0.0.112/32 |
+| leaf1-rio.dc | 10.0.0.113/32 | 
+| leaf2-rio.dc | 10.0.0.114/32 | 
+| leaf3_vpc-rio.dc | 10.0.0.115/32, 10.0.0.120/32 |
+| leaf4_vpc-rio.dc | 10.0.0.116/32, 10.0.0.120/32 |
+| borderleaf1-rio.dc | 10.0.0.117/32 |
+| borderleaf2-rio.dc | 10.0.0.118/32 |
+
+
+| Device | Loopback1 IP  | 
 
 |--------|---------------|
 | spine1-rio.dc | 10.0.0.111/32 |
